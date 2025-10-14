@@ -9,14 +9,6 @@
 template<typename T>
 typename T::iterator easyfind(T &t, int i)
 {
-    // if (t.size() < static_cast<unsigned long>(i))
-    // {
-    //     throw std::range_error("t.size() < i");
-    // }
-    // if (t.size() == 0)
-    // {
-    //     throw std::length_error("container is empty");
-    // }
     typename T::iterator iter;
     
     iter = std::find(t.begin(), t.end(), i);

@@ -1,5 +1,4 @@
 #include "easyfind.hpp"
-
 #include <exception>
 #include <iostream>
 

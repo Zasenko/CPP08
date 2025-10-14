@@ -78,7 +78,7 @@ std::cout << "--------- 10000 ---------" << std::endl;
         Span big(10000);
 
         std::vector<int> numbers;
-        for (int i = 0; i < 10000; ++i)
+        for (int i = 0; i < 10000; i++)
             numbers.push_back(rand());
             
         big.addRange(numbers.begin(), numbers.end());
@@ -92,5 +92,25 @@ std::cout << "--------- 10000 ---------" << std::endl;
         std::cerr << "Error: " << e.what() << std::endl;
     }
 
+    std::cout << "--------- 30000 ---------" << std::endl;
+    try {
+        Span big(30000);
+
+        std::vector<int> numbers;
+        for (int i = 0; i < 30000; i++)
+            numbers.push_back(rand());
+
+        big.addRange(numbers.begin(), numbers.end());
+
+        int shortest = big.shortestSpan();
+        int longest = big.longestSpan();
+        std::cout << "Shortest span: " << shortest << std::endl;
+        std::cout << "Longest span: " << longest << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
     return 0;
 }
+

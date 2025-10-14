@@ -23,7 +23,6 @@ public:
     int shortestSpan() const;
     int longestSpan() const;
 
-
     class SpanFullException : public std::exception {
         public:
             const char* what() const throw();
@@ -41,7 +40,6 @@ public:
         }
         _data.insert(_data.end(), begin, end);
     }
-
 };
 
 #endif
