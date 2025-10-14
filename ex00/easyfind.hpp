@@ -4,13 +4,11 @@
 #include <stdexcept>
 #include <algorithm>
 #include <vector>
+#include <list>
 
 template<typename T>
 typename T::iterator easyfind(T &t, int i)
 {
-    // if (i <= 0){
-    //     throw std::invalid_argument("i <= 0");
-    // }
     // if (t.size() < static_cast<unsigned long>(i))
     // {
     //     throw std::range_error("t.size() < i");
