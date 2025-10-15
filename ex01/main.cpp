@@ -2,14 +2,54 @@
 #include <iostream>
 
 int main() {
+    std::cout << "--------!!!!!----------" << std::endl;
 
     try {
+        std::vector<int> a;
+
+        for (size_t i = 0; i < 2; i++)
+        {
+            a.push_back(i);
+        }
+        
         Span sp = Span(5);
         sp.addNumber(6);
         sp.addNumber(3);
         sp.addNumber(17);
         sp.addNumber(9);
-        sp.addNumber(11);
+
+        sp.addRange(a.begin(), a.end());
+
+        std::cout << "--------- 444444444  ---------" << std::endl;
+
+
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
+    } catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+        std::cout << "--------!!!!!twetwerewrwer ----------" << std::endl;
+
+    try {
+        
+        std::vector<int> a;
+        for (size_t i = 0; i < 1; i++)
+        {
+            a.push_back(i);
+        }
+
+        Span sp = Span(5);
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+
+        sp.addRange(a.begin(), a.end());
+
+        std::cout << "--------- 444444444  ---------" << std::endl;
+
+
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
     } catch (std::exception &e) {

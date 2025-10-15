@@ -4,8 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <exception>
-
-
+#include <iostream>
 
 class Span {
 private:
@@ -18,7 +17,6 @@ public:
     Span &operator=(const Span &src);
     ~Span();
 
-    // Методы
     void addNumber(int number);
     int shortestSpan() const;
     int longestSpan() const;

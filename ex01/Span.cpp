@@ -2,10 +2,8 @@
 
 Span::Span(unsigned int N)
 {
-    // Можно зарезервировать вместимость, чтобы избежать перераспределений
     _data.reserve(N);
     _N = N;
-
 }
 
 Span::Span(const Span &other) : _data(other._data), _N(other._N) {}
@@ -32,11 +30,9 @@ int Span::shortestSpan() const {
         throw SpanNotEnoughNumbersException();
     }
 
-    // Создадим копию и отсортируем
     std::vector<int> copy(_data);
     std::sort(copy.begin(), copy.end());
 
-    // Найдём минимальную разницу между соседями
     int minDiff = copy[1] - copy[0];
     for (size_t i = 1; i < copy.size(); ++i) {
         int diff = copy[i] - copy[i - 1];
@@ -52,7 +48,6 @@ int Span::longestSpan() const {
         throw SpanNotEnoughNumbersException();
     }
 
-    // Найти минимум и максимум в _data
     int minVal = *std::min_element(_data.begin(), _data.end());
     int maxVal = *std::max_element(_data.begin(), _data.end());
     return maxVal - minVal;
