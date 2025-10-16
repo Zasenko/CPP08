@@ -18,14 +18,27 @@ Span &Span::operator=(const Span &other) {
 
 Span::~Span() {}
 
-void Span::addNumber(int number) {
+void Span::addNumber(int number)
+{
     if (_data.size() >= _N) {
         throw SpanFullException();
     }
     _data.push_back(number);
 }
 
-int Span::shortestSpan() const {
+void Span::addNumbers(int count)
+{
+    if (count + _data.size() > _N) {
+        throw SpanFullException();
+    }
+    for (int i = 0; i < count; i++)
+    {
+        _data.push_back(rand());
+    }
+}
+
+int Span::shortestSpan() const
+{
     if (_data.size() < 2) {
         throw SpanNotEnoughNumbersException();
     }
@@ -43,7 +56,8 @@ int Span::shortestSpan() const {
     return minDiff;
 }
 
-int Span::longestSpan() const {
+int Span::longestSpan() const
+{
     if (_data.size() < 2) {
         throw SpanNotEnoughNumbersException();
     }
@@ -53,10 +67,12 @@ int Span::longestSpan() const {
     return maxVal - minVal;
 }
 
-const char* Span::SpanFullException::what() const throw() {
+const char* Span::SpanFullException::what() const throw()
+{
     return "Span is full, cannot add more numbers";
 }
 
-const char* Span::SpanNotEnoughNumbersException::what() const throw() {
+const char* Span::SpanNotEnoughNumbersException::what() const throw()
+{
     return "Not enough numbers to find a span";
 }

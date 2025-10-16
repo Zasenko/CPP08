@@ -18,6 +18,7 @@ public:
     ~Span();
 
     void addNumber(int number);
+    void addNumbers(int count);
     int shortestSpan() const;
     int longestSpan() const;
 
