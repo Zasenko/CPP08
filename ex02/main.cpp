@@ -33,6 +33,7 @@ int main() {
 
     std::stack<int> s(mstack);
 
+
     std::cout << "--------- my tests: ---------" << std::endl;
 
     std::cout << "mstack top: " << mstack.top() << std::endl;
@@ -42,9 +43,32 @@ int main() {
     std::cout << "copy top: " <<  mstack.top() << std::endl;
     std::cout << "copy size: " <<  mstack.size() << std::endl;
 
-    const MutantStack<int> mstackAs = mstack;
+    MutantStack<int> mstackAs = mstack;
     std::cout << "as top: " <<  mstackAs.top() << std::endl;
     std::cout << "as size: " <<  mstackAs.size() << std::endl;
+
+
+    MutantStack<int> emptyStack;
+    std::cout << "emptyStack size: " <<  emptyStack.size() << std::endl;
+    if (!emptyStack.empty()) {
+        std::cout << "emptyStack top: " <<  emptyStack.top() << std::endl;
+    }
+    if (!emptyStack.empty()) {
+        std::cout << "pop from emptyStack: " <<  emptyStack.top() << std::endl;
+        emptyStack.pop();
+    }
+    if (!emptyStack.empty()) {
+        std::cout << "emptyStack top: " <<  emptyStack.top() << std::endl;
+    }
+    emptyStack.push(666);
+    if (!emptyStack.empty()) {
+        std::cout << "emptyStack top: " <<  emptyStack.top() << std::endl;
+    }
+    if (!emptyStack.empty()) {
+        std::cout << "pop from emptyStack: " <<  emptyStack.top() << std::endl;
+        emptyStack.pop();
+    }
+
 
     return 0;
 }
@@ -79,8 +103,6 @@ int main() {
 //         std::cout << *it << std::endl;
 //         ++it;
 //     }
-
-//     std::list<int> s(mstack);
 
 //     return 0;
 // }
